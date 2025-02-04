@@ -1,42 +1,55 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom"; 
+import { NavLink, Outlet } from "react-router-dom";
 
+const Layout = () => {
+  return (
+    <div className="layout-container">
+      {/* Header */}
+      <div className="header-container">Header</div>      
+        <div className="middle">
+        
+          {/* Sidebar */}
+          <aside className="sidebar-container">
+            <nav>
+              <ul>
+                <li>
+                  <NavLink to="/home" className="nav-link">
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/trucks" className="nav-link">
+                    Truck
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/warehouses" className="nav-link">
+                    Warehouse
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/myprofile/1234" className="nav-link">
+                    My Profile
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/search" className="nav-link">
+                    Search
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
+          </aside>
 
-const  Layout = ()=>{
-    return (
-        <div className="h-screen flex flex-col">
-          {/* Header */}
-          <header className="bg-blue-600 text-white p-4 text-center">
-            Header
-          </header>
-    
-          <div className="flex flex-1">
-            {/* Sidebar */}
-            <aside className="w-64 bg-gray-800 text-white p-4">
-              <nav>
-                <ul>
-                  <li><NavLink to="/home">Home</NavLink></li>
-                  <li><NavLink to="/trucks">Truck</NavLink></li>
-                  <li><NavLink to="/warehouses">Warehouse</NavLink></li>
-                  <li><NavLink to="/myprofile/1234">My Profile</NavLink></li>
-                  <li><NavLink to="/search">Search</NavLink></li>
-                </ul>
-              </nav>
-            </aside>
-    
-            {/* Dynamic Content */}
-            <main className="flex-1 bg-gray-100 p-6">
-              <Outlet /> 
-            </main>
-          </div>
-    
-          {/* Footer */}
-          <footer className="bg-blue-600 text-white p-4 text-center">
-            Footer
-          </footer>
-        </div>
-      );
-}
+          {/* Dynamic Content */}
+          <main className="main-content">
+            <Outlet />
+          </main>
+        </div>     
+      {/* Footer */}
+      <footer className="footer-container">Footer</footer>
+    </div>
+  );
+};
 
-export default Layout
-
+export default Layout;
