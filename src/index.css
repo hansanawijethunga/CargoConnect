@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumar+One&display=swap');
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -28,6 +29,13 @@ body {
   padding: 0;
   height: calc(100vh - 1rem);
   
+}
+
+.brandName {
+  color: #0f37e7;
+  font-weight: bold; /* Makes the text bold */
+  font-size: 12px; 
+  font-family: "Kumar One", serif;
 }
 
 /* Header */

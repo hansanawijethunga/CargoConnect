@@ -1,11 +1,13 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import Header from "../Components/header";
+import Footer from "../Components/footer";
 
 const Layout = () => {
   return (
     <div className="layout-container">
       {/* Header */}
-      <div className="header-container">Header</div>      
+      <header className="header-container"><Header/></header>      
         <div className="middle">
         
           {/* Sidebar */}
@@ -26,12 +28,7 @@ const Layout = () => {
                   <NavLink to="/warehouses" className="nav-link">
                     Warehouse
                   </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/myprofile/1234" className="nav-link">
-                    My Profile
-                  </NavLink>
-                </li>
+                </li>               
                 <li>
                   <NavLink to="/search" className="nav-link">
                     Search
@@ -47,7 +44,7 @@ const Layout = () => {
           </main>
         </div>     
       {/* Footer */}
-      <footer className="footer-container">Footer</footer>
+      <footer className="footer-container"><Footer/></footer>
     </div>
   );
 };

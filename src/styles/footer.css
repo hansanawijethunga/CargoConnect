@@ -1,0 +1,12 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+.footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  background-color: #2c2f33; /* Modern dark gray */
+  color: #ffffff; /* White text for contrast */
+  font-family: "Poppins", sans-serif; /* Sleek modern font */
+  border-top: 3px solid #1e2124; /* Slightly darker top border */
+}
