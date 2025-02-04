@@ -1,37 +1,27 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/login";
+import Home from "./pages/home";
+import Layout from "./pages/layout";
+import Truck from "./pages/trucks";
+import Warehouse from "./pages/warehoues";
+import Myprofile from "./pages/myprofile";
+import Search from "./pages/search";
 
 const App = () => {
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
-  const _handleLogin = () => {
-    alert(`User name is ${userName} \nPassword: ${password}`);
-  };
   return (
-    <div class="login-container">
-      <h3>Home Page2</h3>
-      <div class="input-group">
-        <input
-          type="text"
-          placeholder="Username"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-      </div>
-      <div class="input-group">
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <div class="input-group">
-        <input type="button" value="Login" onClick={_handleLogin} />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+      <Route path="/" element={<Login />} />
+        <Route path="/" element={<Layout />}>          
+          <Route path="/home" element={<Home />} />
+          <Route path="/trucks" element={<Truck />} />
+          <Route path="/warehouses" element={<Warehouse />} />
+          <Route path="/myprofile/:id" element={<Myprofile />} />
+          <Route path="/search" element={<Search />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 };
 
