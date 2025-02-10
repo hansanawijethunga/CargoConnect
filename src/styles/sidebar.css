@@ -1,0 +1,28 @@
+.sidebar {
+    background-color: #2d3748; 
+    color: white;
+    /* padding: 1rem; */
+    flex: 1;
+  }
+  
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 1rem;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }

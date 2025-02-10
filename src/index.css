@@ -72,45 +72,14 @@ body {
 
 .sidebar-container {
   width: 200px;   
-  top: 3.5rem; 
-  bottom: 0;
-  padding: 1rem;
   background-color: #000816; 
+  display: flex;
+  
 
 }
 
 
-.sidebar {
-  width: 200px; 
-  background-color: #2d3748; 
-  color: white;
-  top: 3.5rem; 
-  bottom: 0;
-  padding: 1rem;
 
-}
-
-
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar nav ul li {
-  margin-bottom: 1rem;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 0.5rem;
-}
-
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-}
 
 /* Main Content Area */
 
