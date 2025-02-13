@@ -1,0 +1,40 @@
+.controllButtons {
+    display: flex;
+    gap: 2px; /* Small gap between buttons */
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .controllButtons button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  .controllButtons button:nth-child(1) {
+    flex: 2; /* 1/2 of the total width (Add/Update button) */
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .controllButtons button:nth-child(2),
+  .controllButtons button:nth-child(3) {
+    flex: 1; /* 1/4 of the total width (Delete & Clear buttons) */
+  }
+  
+  .controllButtons button:nth-child(2) {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .controllButtons button:nth-child(3) {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .controllButtons button:hover {
+    opacity: 0.9;
+  }
+  

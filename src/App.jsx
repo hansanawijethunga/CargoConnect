@@ -6,6 +6,7 @@ import Truck from "./pages/trucks";
 import Warehouse from "./pages/warehoues";
 import Myprofile from "./pages/myprofile";
 import Search from "./pages/search";
+import Test from "./pages/test";
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
           <Route path="/trucks" element={<Truck />} />
           <Route path="/warehouses" element={<Warehouse />} />
           <Route path="/myprofile/:id" element={<Myprofile />} />
-          <Route path="/search" element={<Search />} />          
+          <Route path="/search" element={<Search />} />
+          <Route path="/test" element={<Test />} />               
         </Route>
       </Routes>
     </Router>

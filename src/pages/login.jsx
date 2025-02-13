@@ -11,7 +11,7 @@ const Login = ()=>{
     navigate('/home')
   };
   return (
-    <div class="login-container">
+    <div className="login-container">
       <h3>Login</h3>
       <div class="input-group">
         <input
@@ -21,7 +21,7 @@ const Login = ()=>{
           onChange={(e) => setUserName(e.target.value)}
         />
       </div>
-      <div class="input-group">
+      <div className="input-group">
         <input
           type="password"
           placeholder="Password"
@@ -29,7 +29,7 @@ const Login = ()=>{
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <div class="input-group">
+      <div className="input-group">
         <input type="button" value="Login" onClick={_handleLogin} />
       </div>
     </div>
