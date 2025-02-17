@@ -5,8 +5,8 @@ import Layout from "./pages/layout";
 import Truck from "./pages/trucks";
 import Warehouse from "./pages/warehoues";
 import Myprofile from "./pages/myprofile";
-import Search from "./pages/search";
 import Test from "./pages/test";
+import Trip from "./pages/trips";
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/trucks" element={<Truck />} />
           <Route path="/warehouses" element={<Warehouse />} />
           <Route path="/myprofile/:id" element={<Myprofile />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/search" element={<Trip />} />
           <Route path="/test" element={<Test />} />               
         </Route>
       </Routes>

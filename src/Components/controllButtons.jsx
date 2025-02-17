@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import '../styles/components/controll.css'
 
 const ControllButton = ({ onSave, onUpdate, onDelete, onClear , selectedIndex}) => {

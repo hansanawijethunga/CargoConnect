@@ -1,19 +1,30 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import '../styles/login.css'
+
+import msalInstance from '../helpers/msalInstance'; 
+import { loginRequest } from '../helpers/msal'; 
 
 const Login = ()=>{
-    const [userName, setUserName] = useState('');
+  const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
-  const _handleLogin = () => {
-    // alert(`User name is ${userName} \nPassword: ${password}`);
-    navigate('/home')
-  };
+
+
+  const login = async () => {
+    try {
+      await msalInstance.initialize();
+      const loginResponse = await msalInstance.loginPopup(loginRequest);
+      console.log('Login successful', loginResponse);
+      // You can store the token or set a state to indicate login success
+    } catch (error) {
+      console.error('Login error:', error);
+    }
+  };  
   return (
+    <div className='login-page'> 
     <div className="login-container">
       <h3>Login</h3>
-      <div class="input-group">
+      <div className="input-group">
         <input
           type="text"
           placeholder="Username"
@@ -30,8 +41,9 @@ const Login = ()=>{
         />
       </div>
       <div className="input-group">
-        <input type="button" value="Login" onClick={_handleLogin} />
+        <input type="button" value="Login" onClick={login} />
       </div>
+    </div>
     </div>
   );
 }
