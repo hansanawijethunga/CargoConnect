@@ -8,7 +8,7 @@ import {
   UnauthenticatedTemplate,
 } from "@azure/msal-react";
 import { useMsal } from "@azure/msal-react";
-import { loginRequest } from "../helpers/authCOnfig";
+import { loginRequest } from "../helpers/authConfig";
 
 const Layout = () => {
   const { instance } = useMsal();
@@ -17,14 +17,13 @@ const Layout = () => {
   console.log(activeAccount);
   console.log(instance);
 
-  const handleRedirect = () => {
-    instance
-        .loginRedirect({
-            ...loginRequest,
-            prompt: 'create',
-        })
-        .catch((error) => console.log(error));
-};
+  const handleRedirect = async () => {
+    try {
+      await instance.loginRedirect(loginRequest);
+    } catch (error) {
+      console.error("Login failed: ", error);
+    }
+  };
 
   return (
     <>

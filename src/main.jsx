@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 
 import { PublicClientApplication, EventType } from "@azure/msal-browser";
-import { msalConfig } from './helpers/authCOnfig.js';
+import { msalConfig } from './helpers/authConfig.js';
 import { BrowserRouter as Router } from "react-router-dom";
 
 export const msalInstance = new PublicClientApplication(msalConfig);

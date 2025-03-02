@@ -10,7 +10,8 @@ import Trip from "./pages/trips";
 import { MsalProvider }  from '@azure/msal-react';
 
 const App = ({instance}) => {
-
+console.log(import.meta.env.VITE_CLIENT_ID);
+console.log("dasdasdasda");
   return ( 
     <MsalProvider instance={instance}>   
       <Routes>
