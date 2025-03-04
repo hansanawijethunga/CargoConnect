@@ -51,9 +51,19 @@ const Layout = () => {
         </div>
       </AuthenticatedTemplate>
       <UnauthenticatedTemplate>          
-             <button className="signInButton" onClick={handleRedirect} variant="primary">
-                    Sign up
-                </button>        
+      <div className="layout-container">
+          {/* Header */}
+          <header className="header-container">
+            <Header />
+          </header>
+          <div className="middle">
+            {/* Sidebar */}         
+          </div>
+          {/* Footer */}
+          <footer className="footer-container">
+            <Footer />
+          </footer>
+        </div>     
       </UnauthenticatedTemplate>
     </>
   );

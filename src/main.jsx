@@ -1,23 +1,23 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
 
 import { PublicClientApplication, EventType } from "@azure/msal-browser";
-import { msalConfig } from './helpers/authConfig.js';
+import { msalConfig } from "./helpers/authConfig.js";
 import { BrowserRouter as Router } from "react-router-dom";
 
 export const msalInstance = new PublicClientApplication(msalConfig);
 
 msalInstance.initialize().then(() => {
-  // Default to using the first account if no account is active on page load
-  if (!msalInstance.getActiveAccount() && msalInstance.getAllAccounts().length > 0) {
-    // Account selection logic is app dependent. Adjust as needed for different use cases.
+  if (
+    !msalInstance.getActiveAccount() &&
+    msalInstance.getAllAccounts().length > 0
+  ) {
     msalInstance.setActiveAccount(msalInstance.getAllAccounts()[0]);
   }
 
   msalInstance.enableAccountStorageEvents();
-
 
   msalInstance.addEventCallback((event) => {
     if (event.eventType === EventType.LOGIN_SUCCESS && event.payload.account) {
@@ -26,13 +26,11 @@ msalInstance.initialize().then(() => {
     }
   });
 
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Router>
-    <App instance={msalInstance} />
-    </Router>
-  </StrictMode>,
-)
-
+  createRoot(document.getElementById("root")).render(
+    <StrictMode>
+      <Router>
+        <App instance={msalInstance} />
+      </Router>
+    </StrictMode>
+  );
 });
